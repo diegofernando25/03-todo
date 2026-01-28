@@ -1,19 +1,35 @@
+'use client';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react'
 import { CiBookmarkCheck } from 'react-icons/ci'
 
-const SidebarItems = () => {
+
+interface Props{
+  icon: React.ReactNode;
+  path: string;
+  title: string;
+}
+
+const SidebarItems = ({icon, path, title}: Props) => {
+  const pathName = usePathname();
+  
   return (
     <div>
       <li>
-        <a
-          href="#"
-          className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
+        <Link
+          href={path}
+          className={`
+            px-4 py-3 flex items-center space-x-4 rounded-md group
+            hover:bg-linear-to-r hover:bg-sky-600 hover:text-white
+            ${path === pathName ? 'text-white bg-linear-to-r from-sky-600 to-cyan-400': ''}
+            `}
         >
-          <CiBookmarkCheck size={30} />
-          <span className="group-hover:text-gray-700">
-            Categories
+          { icon }
+          <span className="group-hover:text-white-700">
+            { title }
           </span>
-        </a>
+        </Link>
       </li>
     </div>
   )

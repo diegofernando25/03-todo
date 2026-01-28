@@ -1,7 +1,7 @@
-import prisma from "@/src/lib/prisma";
 import { NextResponse } from "next/server";
 import * as yup from "yup";
-import type { Todo } from "@/src/generated/prisma/client";
+import type { Todo } from "@/generated/prisma/client";
+import prisma from "@/lib/prisma";
 
 type Context = { params: Promise<{ id: string }> };
 
