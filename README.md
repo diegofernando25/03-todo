@@ -34,3 +34,5 @@ NOTA
 `````
 localhost:3000/api/seed
 `````# 03-todo
+Notas:
+* TopMenu y Sidebar están en todas las páginas del frontend, por eso las importamos en el layout (dashbar/layout.tsx)
