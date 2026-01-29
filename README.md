@@ -31,8 +31,20 @@ NOTA
 > npm i -D @prisma/config
 
 5. Ejecutar el seed para crear la base de datos
-`````
+````
 localhost:3000/api/seed
-`````# 03-todo
-Notas:
+````
+03-todo
+
+            Nota
 * TopMenu y Sidebar están en todas las páginas del frontend, por eso las importamos en el layout (dashbar/layout.tsx)
+* En caso de que no tengas las carpetas: postgres, node_modules, next, env
+1. Abre docker y levanta la DB
+2. Ejecuta npm install para reconstruir los modulos de next
+3. Ejecuta los comandos de prisma
+````
+npx prisma migrate dev
+npx prisma generate
+````
+
+
